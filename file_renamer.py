@@ -4,9 +4,9 @@ folder = "D:Photos back up/photos/raw/2026/Cayman summer 2026"
 files = os.listdir(folder)
 
 start = 4 #Not set up currently
-prefix='_HS_KY_'
+prefix='_HS_KY_' #What the filename begins with
 
-index = 1
+index = 1 #initial number e.g. 00001
 
 
 print(f'files selected:{files}')
@@ -19,9 +19,11 @@ if proceed == 'yes':
     for file in files:
         newName = prefix+str('{:05d}'.format(index))+'.ARW' # prefix + index to 5 + file extension
         os.rename(f'{folder}/{file}',f'{folder}/{newName}')
+
         #if file[0:start] != prefix:
         #else:
             #print('prefix already in use')
+        #Just for progress
         percent = (i / len(files)) * 100
         if percent >= threshold:
             print(f"{threshold}%")

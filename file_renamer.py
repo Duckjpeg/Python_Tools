@@ -1,6 +1,6 @@
 import os
 
-folder = "D:Photos back up/photos/raw/2026/Cayman summer 2026"
+folder = "D:/Photos back up/photos/raw/2026/Cayman summer 2026"
 files = os.listdir(folder)
 
 start = 4 #Not set up currently
@@ -17,7 +17,8 @@ i=0
 threshold = 10
 if proceed == 'yes':
     for file in files:
-        newName = prefix+str('{:05d}'.format(index))+'.ARW' # prefix + index to 5 + file extension
+        extension = file.rsplit('.',1)[1] #Gets the correct file extension
+        newName = prefix+str('{:05d}'.format(index))+extension # prefix + index to 5 + file extension
         os.rename(f'{folder}/{file}',f'{folder}/{newName}')
 
         #if file[0:start] != prefix:

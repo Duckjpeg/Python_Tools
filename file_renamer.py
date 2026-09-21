@@ -18,7 +18,7 @@ threshold = 10
 if proceed == 'yes':
     for file in files:
         extension = file.rsplit('.',1)[1] #Gets the correct file extension
-        newName = prefix+str('{:05d}'.format(index))+extension # prefix + index to 5 + file extension
+        newName = prefix+str('{:05d}'.format(index))+'.'+extension # prefix + index to 5 + file extension
         os.rename(f'{folder}/{file}',f'{folder}/{newName}')
 
         #if file[0:start] != prefix:
